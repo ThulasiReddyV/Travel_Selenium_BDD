@@ -8,9 +8,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException,NoSuchElementException
 
 from pages.base_page import Base_Page
+from pages.home_page import Home_Page
 
 
-base_url = "https://www.abhibus.com/"
+
 
 
 #driver= webdriver.Chrome()
@@ -19,18 +20,20 @@ base_url = "https://www.abhibus.com/"
 @given('Give the url')
 def go_to_url(context):
     #self.driver = driver
-    context.base = Base_Page(context.driver)
+    context.base = Home_Page(context.driver)
     print("base")
     
     #raise StepNotImplementedError(u'Given Give the url')
 
 
-@when('Enter the "{from_text}" and "{to_text}"')
-def step_enterimpl(context,from_text,to_text):
+@when('Enter the "{from_text}" and "{to_text}","{date_of_journey}"')
+def step_enterimpl(context,from_text,to_text,date_of_journey):
     print("HI")
     
     context.base.enter_from(from_text)
     context.base.enter_to(to_text)
+    context.base.select_date_of_journey(date_of_journey)
+    context.base.click_search()
     #raise StepNotImplementedError(u'When enter the from and to')
 
 

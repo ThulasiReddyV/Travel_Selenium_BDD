@@ -5,7 +5,7 @@ FROM_SUGGESTION_XPATH = (By.XPATH,"//*[span[text()='Hyderabad'] and small[text()
 TO_XPATH = (By.XPATH,"//div[text() = 'Going To']")
 TO_SUGGESTION_XPATH = (By.XPATH,"//*[span[text()='Tirupati'] and small[text()='(All drop points)']]")
 
-CALENDER = (By.XPATH,"//*[@placeholder = 'Onward Journey Date']")
+CALENDER_XPATH = (By.XPATH,"//*[@placeholder = 'Onward Journey Date']")
 NEXT_MONTH_BTN_CLASS = (By.CLASSNAME,"calender-month-change")
 
 day, month,year = map(int, "02/04/2026".split('/'))
