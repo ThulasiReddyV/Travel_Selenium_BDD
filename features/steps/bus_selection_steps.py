@@ -1,0 +1,1 @@
+#@when(u'user selects bus and seat for the valid date and route')

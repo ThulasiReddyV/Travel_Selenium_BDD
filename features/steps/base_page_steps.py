@@ -9,36 +9,46 @@ from selenium.common.exceptions import TimeoutException,NoSuchElementException
 
 from pages.base_page import Base_Page
 from pages.home_page import Home_Page
+from utils.utilities import *
 
 
+@given('load test data "{test_case_id}"')
+def load_test(context,test_case_id):
+    
+    context.test_data = read_and_get_json(test_case_id)
+    
 
+@when('user select the date and routes search buses')
 
-
-#driver= webdriver.Chrome()
-
-
-@given('Give the url')
-def go_to_url(context):
-    #self.driver = driver
+def entering_journey_details(context):
+    print("Select the date and routes")
+    data = context.test_data
     context.base = Home_Page(context.driver)
-    print("base")
+    context.base.enter_from(data["from_loc"])
+    context.base.enter_to(data["to_loc"])
     
-    #raise StepNotImplementedError(u'Given Give the url')
-
-
-@when('Enter the "{from_text}" and "{to_text}","{date_of_journey}"')
-def step_enterimpl(context,from_text,to_text,date_of_journey):
-    print("HI")
+    proceed = context.base.select_date_of_journey(data["date_of_journey"])
+    """
+    print(f"Given Date  : {data['date_of_journey']}")
+    print("Proceed      : ",proceed)
+    #print(f"  Reason       : {reason}")"""
+    if not proceed :
+        context.flow_stopped = True
+        print("PASt or max date")
     
-    context.base.enter_from(from_text)
-    context.base.enter_to(to_text)
-    context.base.select_date_of_journey(date_of_journey)
-    context.base.click_search()
+    else:
+        context.base.click_search()
+    
     #raise StepNotImplementedError(u'When enter the from and to')
 
 
-@then('Land in the route details')
+#@then('Land in the payment page')
 def step_impl(context):
-    print("HI2")
+    context.base = Home_Page(context.driver)
+    data = context.test_data
+    check = context.base.get_url()
+    print(check)
+    assert data["from_loc"].lower() in check.lower() , "Wrong Web"
+
 
     #raise StepNotImplementedError(u'Then Land in the route details')

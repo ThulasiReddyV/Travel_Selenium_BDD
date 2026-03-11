@@ -6,7 +6,7 @@ TO_XPATH = (By.XPATH,"//div[text() = 'Going To']")
 TO_SUGGESTION_XPATH = (By.XPATH,"//*[span[text()='Tirupati'] and small[text()='(All drop points)']]")
 
 CALENDER_XPATH = (By.XPATH,"//*[@placeholder = 'Onward Journey Date']")
-NEXT_MONTH_BTN_CLASS = (By.CLASSNAME,"calender-month-change")
+NEXT_MONTH_BTN_XPATH = (By.XPATH,"//*[contains(@d, 'm9.4 17.1-.5-.5 4.6-4.6-4.6-4.6.5-.5 5.1 5.1Z')]")
 
 day, month,year = map(int, "02/04/2026".split('/'))
 print( day, month,year)  # Output: 2 4 2026
