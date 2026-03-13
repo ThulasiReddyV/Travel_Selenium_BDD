@@ -8,8 +8,10 @@ from selenium.common.exceptions import TimeoutException,NoSuchElementException
 
 from datetime import datetime
 import time
+import logging
 
-
+#import functools
+#print = functools.partial(print, flush=True)
 
 
 class Base_Page:
@@ -37,7 +39,7 @@ class Base_Page:
     def dd_mm_yy_convert(self,departure_date):
         day, month,year = map(int, departure_date.split('/'))
 
-        print(f"Given Date: {day}/{month}/{year}", end = "      ")
+        logging.info(f"Formatted Date Accepted: {day}/{month}/{year}")
         return day,month,year
 
        

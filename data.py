@@ -14,12 +14,17 @@ print( day, month,year)  # Output: 2 4 2026
 DATE_SELECT_XPATH = (By.XPATH,'//*[@data-date="{day}" and @data-month="{month}" and @data-year="{year}"]')
 SEARCH_XPATH = (By.XPATH,"//*[(@id = 'search-button') and (contains(@class , 'btn-search-wrapper'))]")
 
+
 ERROR_CLASS = (By.CLASSNAME,"error")
+TOTAL_BUSES_CSS = (By.CSS_SELECTOR,".container.text-neutral-0.bus-search-snackbar")
+NO_OF_SERVICES_CLASS = (By.CLASS_NAME,"buses-availability")
 
 ORIGIN_ERR = "Please enter your Origin City"
 DES_ERR = "Please enter your Destination City"
 NO_SERVICES_MSG_ID = (By.ID,"not-found-container")
 TGSRTC_ID = (By.ID,"group-service-TGSRTC")
+SERVICE_PROVIDER_NAME_ID = (By.ID,"group-services-name")
+NO_OF_SERVICES_CLASS = (By.CLASS_NAME,"text-truncate")
 TGSRTC_OPEN_XPATH = (By.XPATH,"//*[@id='group-service-TGSRTC']/div")
 SEATS_INFO_XPATH_WITH_PARENT = (By.XPATH,"//*[contains(@class,'text-truncate')]")
 BUS_WITH_SERVICE_NO_XPATH = (By.XPATH,"//h5[contains(text() , '{service_no}')]")

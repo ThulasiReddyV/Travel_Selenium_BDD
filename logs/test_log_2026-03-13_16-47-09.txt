@@ -1,0 +1,34 @@
+2026-03-13 16:47:09  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-13 16:47:09  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-13 16:47:09  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-13 16:47:09  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-13 16:47:22  INFO      
+============================================================
+2026-03-13 16:47:22  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-13 16:47:22  INFO      ============================================================
+2026-03-13 16:47:23  INFO      Select the date and routes
+2026-03-13 16:47:24  INFO      From Hyderabad
+2026-03-13 16:47:25  INFO      To Tirupati
+2026-03-13 16:47:25  INFO      Formatted Date Accepted: 20/3/2026
+2026-03-13 16:47:25  INFO      Selected Date: 20/03/2026
+2026-03-13 16:47:25  INFO      Given Date: 20/03/2026
+2026-03-13 16:47:25  INFO      Proceed To Buses Page : True
+2026-03-13 16:47:25  INFO      search clicked
+2026-03-13 16:47:28  INFO      Showing 134 Buses on this route
+2026-03-13 16:47:28  INFO      TGSRTC
+2026-03-13 16:47:28  INFO      (Telangana State Road Transport Corporation)
+2026-03-13 16:47:28  INFO      24 Buses,776 Seats Available
+2026-03-13 16:47:30  INFO      Service Number - 1453
+2026-03-13 16:47:32  INFO      Select Seats -- 33 Seats Left
+2026-03-13 16:47:34  INFO      Mgbs
+2026-03-13 16:47:35  INFO      Tirupati Bs
+2026-03-13 16:47:36  INFO      Total Available seats: 33
+2026-03-13 16:47:42  INFO      Seat 18 not already booking 
+2026-03-13 16:47:42  INFO      Flow stopped - due to Selected seat already booked 
+2026-03-13 16:47:43  INFO      https://www.abhibus.com/bus_search/Hyderabad/3/Tirupati/12/20-03-2026/O
+2026-03-13 16:47:43  INFO      
+============================================================
+2026-03-13 16:47:43  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-13 16:47:43  INFO        STATUS   : Status.passed
+2026-03-13 16:47:43  INFO      ============================================================
+

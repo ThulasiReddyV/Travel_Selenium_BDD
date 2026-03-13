@@ -11,6 +11,8 @@ from datetime import datetime
 from pages.base_page import Base_Page
 from pages.home_page import Home_Page
 from utils.utilities import *
+import logging
+
 
 @then('Land in the payment page')
 
@@ -24,6 +26,7 @@ def validation(context):
     elif context.base.max_date == True:# and context.base.lastmonth_loaded == True :
         assert context.flow_stopped == True , "Something went wrong"
     else:
-        print(check)
+        #print(check)
+        logging.info(check)
         assert data["from_loc"].lower() in check.lower() , "Website not"
         

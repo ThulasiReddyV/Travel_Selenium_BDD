@@ -1,0 +1,18 @@
+[
+
+
+    {
+        "test_case_id":"Test_002",
+        "scenario" : "Unavailable Seat Selection",
+        "from_loc" : "HYDERABAD",
+        "to_loc" : "TIRUPATI",
+        "date_of_journey" : "20/03/2026",
+        "bus_ser_no" : "1453",
+        "boarding_pt" : "MGBS",
+        "dropping_pt" : "TIRUPATI BS",
+        "seat_no" : "18",
+        "error_or_message" : "Seat is unavailable for booking"
+
+    }
+    
+]

@@ -9,7 +9,9 @@ from pages.base_page import Base_Page
 
 from datetime import datetime, timedelta
 import time
-
+import logging
+#import functools
+#print = functools.partial(print, flush=True)
 
 
 class Home_Page(Base_Page):
@@ -23,6 +25,7 @@ class Home_Page(Base_Page):
     NEXT_MONTH_BTN_XPATH = (By.XPATH,"//*[contains(@d, 'm9.4 17.1-.5-.5 4.6-4.6-4.6-4.6.5-.5 5.1 5.1Z')]/ancestor::span")
     
     
+    
     """def __init__(self,driver:WebDriver):
         self.driver = driver
         self.wait = WebDriverWait(driver,10)"""
@@ -34,7 +37,7 @@ class Home_Page(Base_Page):
         from_city.send_keys(from_loc)
         from_suggestion = self.wait.until(EC.element_to_be_clickable(self.CLICK_1ST_SUGGESTION_LI_XPATH))
         from_suggestion.click()
-        print(from_city.get_attribute("value"))
+        logging.info(f"From {from_city.get_attribute('value')}")
 
 
     def enter_to(self,to_loc):
@@ -44,7 +47,7 @@ class Home_Page(Base_Page):
         to_city.send_keys(to_loc)
         to_suggestion = self.wait.until(EC.element_to_be_clickable(self.CLICK_1ST_SUGGESTION_LI_XPATH))
         to_suggestion.click()
-        print(to_city.get_attribute("value"))
+        logging.info(f"To {to_city.get_attribute('value')}")
 
 
             
@@ -59,20 +62,21 @@ class Home_Page(Base_Page):
         day,month,year = self.dd_mm_yy_convert(departure_date)
         
         if self.selected_date.date() < self.today.date():
+            logging.info(f"Past Date")
             self.past_date = True
-            print("Past Date")
             return False  
         
         elif self.selected_date.date() > self.today.date() + timedelta(days= 90):
+            logging.info(f"Above 3 months Date")
             self.max_date = True
-            print("Above 3 months Date")
+            
             return False
         
         else:
             DATE_SELECT_XPATH = (By.XPATH,f'//*[@data-date="{day}" and @data-month="{month}" and @data-year="{year}"]')
 
             self.in_month(DATE_SELECT_XPATH)
-            print(f"Selected Date: {calender.get_attribute("value")}")
+            logging.info(f"Selected Date: {calender.get_attribute('value')}")
 
             return True
 
@@ -94,10 +98,13 @@ class Home_Page(Base_Page):
             self.in_month(DATE_SELECT_XPATH)
         except NoSuchElementException:
             self.lastmonth_loaded = True
-            print("Loaded upto Last Month ")
+            logging.info(f"Loaded upto Last Month ")
 
 
     def click_search(self):
         submit_btn = self.wait.until(EC.visibility_of_element_located(self.SEARCH_BTN_XPATH))
         submit_btn.click()
     
+
+
+      
