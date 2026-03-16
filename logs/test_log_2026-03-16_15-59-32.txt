@@ -1,0 +1,48 @@
+2026-03-16 15:59:32  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-16 15:59:32  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-16 15:59:32  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-16 15:59:32  DEBUG     format 'user enter valid passenger details' -> 'user enter valid passenger details'
+2026-03-16 15:59:32  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-16 15:59:43  INFO      
+============================================================
+2026-03-16 15:59:43  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 15:59:43  INFO      ============================================================
+2026-03-16 15:59:43  INFO      Select the date and routes
+2026-03-16 15:59:44  INFO      From Hyderabad
+2026-03-16 15:59:45  INFO      To Tirupati
+2026-03-16 15:59:45  INFO      Formatted Date Accepted: 20/3/2026
+2026-03-16 15:59:45  INFO      Selected Date: 20/03/2026
+2026-03-16 15:59:45  INFO      Given Date: 20/03/2026
+2026-03-16 15:59:45  INFO      Proceed To Buses Page : True
+2026-03-16 15:59:45  INFO      search clicked
+2026-03-16 15:59:48  INFO      Showing 131 Buses on this route
+2026-03-16 15:59:48  INFO      TGSRTC
+2026-03-16 15:59:48  INFO      (Telangana State Road Transport Corporation)
+2026-03-16 15:59:49  INFO      25 Buses,759 Seats Available
+2026-03-16 15:59:50  INFO      Service Number - 1453
+2026-03-16 15:59:51  INFO      Select Seats -- 33 Seats Left
+2026-03-16 15:59:52  INFO      Mgbs
+2026-03-16 15:59:53  INFO      Tirupati Bs
+2026-03-16 15:59:54  INFO      Total Available seats: 33
+2026-03-16 15:59:58  INFO      Seat 1 selected 
+2026-03-16 15:59:59  INFO      Trip Details
+Hyderabad
+20 Mar 2026, 17:30
+Mgbs
+10h.30m
+Tirupati
+21 Mar 2026, 04:00
+Tirupati Bs
+2026-03-16 16:00:00  INFO      Mobile Number: 9012345678
+2026-03-16 16:00:00  INFO      Email ID: Ttt@gmail.com
+2026-03-16 16:00:00  INFO      Name: Ttt
+2026-03-16 16:00:01  INFO      Age: 24
+2026-03-16 16:00:01  INFO      .btn.btn-gender.male.active.light.filled.primary.sm.rounded-md.inactive.button
+2026-03-16 16:00:01  INFO      Gender: Male
+2026-03-16 16:00:01  INFO      Screenshot saved: screenshots/Test_002_Seat_onhold_2026-03-16_16-00-01.png
+2026-03-16 16:00:01  INFO      
+============================================================
+2026-03-16 16:00:01  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 16:00:01  INFO        STATUS   : Status.error
+2026-03-16 16:00:01  INFO      ============================================================
+

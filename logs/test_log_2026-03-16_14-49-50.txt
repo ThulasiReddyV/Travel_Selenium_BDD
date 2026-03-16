@@ -1,0 +1,43 @@
+2026-03-16 14:49:50  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-16 14:49:50  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-16 14:49:50  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-16 14:49:50  DEBUG     format 'user enter valid passenger details' -> 'user enter valid passenger details'
+2026-03-16 14:49:50  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-16 14:50:01  INFO      
+============================================================
+2026-03-16 14:50:01  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 14:50:01  INFO      ============================================================
+2026-03-16 14:50:01  INFO      Select the date and routes
+2026-03-16 14:50:02  INFO      From Hyderabad
+2026-03-16 14:50:03  INFO      To Tirupati
+2026-03-16 14:50:03  INFO      Formatted Date Accepted: 20/3/2026
+2026-03-16 14:50:03  INFO      Selected Date: 20/03/2026
+2026-03-16 14:50:03  INFO      Given Date: 20/03/2026
+2026-03-16 14:50:03  INFO      Proceed To Buses Page : True
+2026-03-16 14:50:03  INFO      search clicked
+2026-03-16 14:50:28  INFO      Showing 132 Buses on this route
+2026-03-16 14:50:28  INFO      TGSRTC
+2026-03-16 14:50:28  INFO      (Telangana State Road Transport Corporation)
+2026-03-16 14:50:28  INFO      25 Buses,758 Seats Available
+2026-03-16 14:50:28  INFO      Service Number - 1453
+2026-03-16 14:50:28  INFO      Select Seats -- 33 Seats Left
+2026-03-16 14:50:29  INFO      Mgbs
+2026-03-16 14:50:30  INFO      Tirupati Bs
+2026-03-16 14:50:31  INFO      Total Available seats: 33
+2026-03-16 14:50:35  INFO      Seat 11 selected 
+2026-03-16 14:50:36  INFO      Trip Details
+Hyderabad
+20 Mar 2026, 17:30
+Mgbs
+10h.30m
+Tirupati
+21 Mar 2026, 04:00
+Tirupati Bs
+2026-03-16 14:50:42  INFO      https://www.abhibus.com/payments/view/home/1/01KKTZ52B0BZJP87557XWE9DM6TZBK1520K?flowType=PAYMENT_SDK&tripId=OGU5301738547D&productType=ABUS
+2026-03-16 14:50:42  INFO      Screenshot saved: screenshots/Test_002_Seat_onhold_2026-03-16_14-50-42.png
+2026-03-16 14:50:42  INFO      
+============================================================
+2026-03-16 14:50:42  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 14:50:42  INFO        STATUS   : Status.failed
+2026-03-16 14:50:42  INFO      ============================================================
+

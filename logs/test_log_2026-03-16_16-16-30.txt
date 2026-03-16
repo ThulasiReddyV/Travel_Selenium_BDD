@@ -1,0 +1,29 @@
+2026-03-16 16:16:30  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-16 16:16:30  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-16 16:16:30  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-16 16:16:30  DEBUG     format 'user enter valid passenger details' -> 'user enter valid passenger details'
+2026-03-16 16:16:30  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-16 16:16:41  INFO      
+============================================================
+2026-03-16 16:16:41  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 16:16:41  INFO      ============================================================
+2026-03-16 16:16:41  INFO      Select the date and routes
+2026-03-16 16:16:41  INFO      From Hyderabad
+2026-03-16 16:16:42  INFO      To Tirupati
+2026-03-16 16:16:42  INFO      Formatted Date Accepted: 20/3/2026
+2026-03-16 16:16:42  INFO      Selected Date: 20/03/2026
+2026-03-16 16:16:42  INFO      Given Date: 20/03/2026
+2026-03-16 16:16:42  INFO      Proceed To Buses Page : True
+2026-03-16 16:16:42  INFO      search clicked
+2026-03-16 16:16:44  INFO      Showing 131 Buses on this route
+2026-03-16 16:16:44  INFO      TGSRTC
+2026-03-16 16:16:44  INFO      (Telangana State Road Transport Corporation)
+2026-03-16 16:16:44  INFO      25 Buses,758 Seats Available
+2026-03-16 16:16:44  INFO      Service Number - 1453
+2026-03-16 16:16:45  INFO      Screenshot saved: screenshots/Test_002_Seat_onhold_2026-03-16_16-16-44.png
+2026-03-16 16:16:45  INFO      
+============================================================
+2026-03-16 16:16:45  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 16:16:45  INFO        STATUS   : Status.error
+2026-03-16 16:16:45  INFO      ============================================================
+

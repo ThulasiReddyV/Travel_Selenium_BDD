@@ -1,0 +1,28 @@
+2026-03-16 14:48:53  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-16 14:48:53  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-16 14:48:53  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-16 14:48:53  DEBUG     format 'user enter valid passenger details' -> 'user enter valid passenger details'
+2026-03-16 14:48:53  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-16 14:49:36  INFO      
+============================================================
+2026-03-16 14:49:36  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 14:49:36  INFO      ============================================================
+2026-03-16 14:49:36  INFO      Select the date and routes
+2026-03-16 14:49:36  INFO      From Hyderabad
+2026-03-16 14:49:37  INFO      To Tirupati
+2026-03-16 14:49:37  INFO      Formatted Date Accepted: 20/3/2026
+2026-03-16 14:49:37  INFO      Selected Date: 20/03/2026
+2026-03-16 14:49:37  INFO      Given Date: 20/03/2026
+2026-03-16 14:49:37  INFO      Proceed To Buses Page : True
+2026-03-16 14:49:37  INFO      search clicked
+2026-03-16 14:49:39  INFO      Showing 132 Buses on this route
+2026-03-16 14:49:39  INFO      TGSRTC
+2026-03-16 14:49:39  INFO      (Telangana State Road Transport Corporation)
+2026-03-16 14:49:39  INFO      25 Buses,758 Seats Available
+2026-03-16 14:49:40  INFO      Screenshot saved: screenshots/Test_002_Seat_onhold_2026-03-16_14-49-40.png
+2026-03-16 14:49:40  INFO      
+============================================================
+2026-03-16 14:49:40  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 14:49:40  INFO        STATUS   : Status.error
+2026-03-16 14:49:40  INFO      ============================================================
+

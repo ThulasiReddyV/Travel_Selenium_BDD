@@ -1,0 +1,35 @@
+2026-03-16 16:05:18  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-16 16:05:18  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-16 16:05:18  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-16 16:05:18  DEBUG     format 'user enter valid passenger details' -> 'user enter valid passenger details'
+2026-03-16 16:05:18  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-16 16:05:26  INFO      
+============================================================
+2026-03-16 16:05:26  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 16:05:26  INFO      ============================================================
+2026-03-16 16:05:26  INFO      Select the date and routes
+2026-03-16 16:05:26  INFO      From Hyderabad
+2026-03-16 16:05:27  INFO      To Tirupati
+2026-03-16 16:05:27  INFO      Formatted Date Accepted: 20/3/2026
+2026-03-16 16:05:27  INFO      Selected Date: 20/03/2026
+2026-03-16 16:05:27  INFO      Given Date: 20/03/2026
+2026-03-16 16:05:27  INFO      Proceed To Buses Page : True
+2026-03-16 16:05:27  INFO      search clicked
+2026-03-16 16:05:29  INFO      Showing 131 Buses on this route
+2026-03-16 16:05:29  INFO      TGSRTC
+2026-03-16 16:05:29  INFO      (Telangana State Road Transport Corporation)
+2026-03-16 16:05:29  INFO      25 Buses,759 Seats Available
+2026-03-16 16:05:31  INFO      Service Number - 1453
+2026-03-16 16:05:31  INFO      Select Seats -- 33 Seats Left
+2026-03-16 16:05:33  INFO      Mgbs
+2026-03-16 16:05:33  INFO      Tirupati Bs
+2026-03-16 16:05:34  INFO      Total Available seats: 32
+2026-03-16 16:05:58  INFO      Seat 1  already booking 
+2026-03-16 16:05:58  INFO      Flow stopped - due to Selected seat already booked 
+2026-03-16 16:05:59  INFO      Screenshot saved: screenshots/Test_002_Seat_onhold_2026-03-16_16-05-58.png
+2026-03-16 16:05:59  INFO      
+============================================================
+2026-03-16 16:05:59  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 16:05:59  INFO        STATUS   : Status.error
+2026-03-16 16:05:59  INFO      ============================================================
+

@@ -86,6 +86,19 @@ def before_scenario(context, scenario):
     #print("Before Scenario")
 
 def after_scenario(context, scenario):
+
+    os.makedirs("screenshots", exist_ok=True)
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
+    # ── Get from test data ──
+    test_id       = context.test_data["test_case_id"]   
+    test_scenario = context.test_data["scenario"]        
+    clean_scenario = test_scenario.replace(" ", "_")     
+
+    # ── Combine ──
+    filename = f"screenshots/{test_id}_{clean_scenario}_{timestamp}.png"
+    context.driver.save_screenshot(filename)
+    logging.info(f"Screenshot saved: {filename}")
     logging.info(f"\n{'='*60}")
     logging.info(f"  FINISHED : {scenario.name}")
     logging.info(f"  STATUS   : {scenario.status}")

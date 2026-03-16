@@ -3,7 +3,7 @@ Feature: Bus Seat Booking Validation
         Given load test data "<test_case_id>"
         When user select the date and routes search buses
         And user selects bus and seat for the valid date and route
-        #And user enter valid passenger details 
+        And user enter valid passenger details 
         Then Land in the payment page
 
     Examples:

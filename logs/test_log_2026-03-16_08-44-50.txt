@@ -1,0 +1,62 @@
+2026-03-16 08:44:50  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-16 08:44:50  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-16 08:44:50  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-16 08:44:50  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-16 08:45:00  INFO      
+============================================================
+2026-03-16 08:45:00  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 08:45:00  INFO      ============================================================
+2026-03-16 08:45:00  INFO      Select the date and routes
+2026-03-16 08:45:01  INFO      From Hyderabad
+2026-03-16 08:45:03  INFO      To Tirupati
+2026-03-16 08:45:03  INFO      Formatted Date Accepted: 20/3/2026
+2026-03-16 08:45:03  INFO      Selected Date: 20/03/2026
+2026-03-16 08:45:03  INFO      Given Date: 20/03/2026
+2026-03-16 08:45:03  INFO      Proceed To Buses Page : True
+2026-03-16 08:45:03  INFO      search clicked
+2026-03-16 08:45:37  INFO      Showing 133 Buses on this route
+2026-03-16 08:45:37  INFO      TGSRTC
+2026-03-16 08:45:37  INFO      (Telangana State Road Transport Corporation)
+2026-03-16 08:45:37  INFO      25 Buses,770 Seats Available
+2026-03-16 08:45:38  INFO      Service Number - 1453
+2026-03-16 08:45:38  INFO      Select Seats -- 33 Seats Left
+2026-03-16 08:45:39  INFO      Mgbs
+2026-03-16 08:45:40  INFO      Tirupati Bs
+2026-03-16 08:45:41  INFO      Total Available seats: 33
+2026-03-16 08:45:42  INFO      Raw: ''
+2026-03-16 08:45:43  INFO      Raw: ''
+2026-03-16 08:45:44  INFO      Raw: '7'
+2026-03-16 08:45:45  INFO      Raw: '11'
+2026-03-16 08:45:46  INFO      Raw: '15'
+2026-03-16 08:45:46  INFO      Raw: '19'
+2026-03-16 08:45:47  INFO      Raw: '23'
+2026-03-16 08:45:47  INFO      Raw: '27'
+2026-03-16 08:45:48  INFO      Raw: '31'
+2026-03-16 08:45:49  INFO      Raw: '2'
+2026-03-16 08:45:49  INFO      Raw: '4'
+2026-03-16 08:45:50  INFO      Raw: '8'
+2026-03-16 08:45:51  INFO      Raw: '12'
+2026-03-16 08:45:51  INFO      Raw: '16'
+2026-03-16 08:45:52  INFO      Raw: '20'
+2026-03-16 08:45:52  INFO      Raw: '24'
+2026-03-16 08:45:53  INFO      Raw: '28'
+2026-03-16 08:45:54  INFO      Raw: '32'
+2026-03-16 08:45:54  INFO      Raw: '33'
+2026-03-16 08:45:55  INFO      Raw: '5'
+2026-03-16 08:45:55  INFO      Raw: '13'
+2026-03-16 08:45:56  INFO      Raw: '17'
+2026-03-16 08:45:57  INFO      Raw: '21'
+2026-03-16 08:45:57  INFO      Raw: '25'
+2026-03-16 08:45:58  INFO      Raw: '29'
+2026-03-16 08:45:59  INFO      Raw: '34'
+2026-03-16 08:45:59  INFO      Raw: '6'
+2026-03-16 08:46:00  INFO      Raw: '14'
+2026-03-16 08:46:00  INFO      Raw: '18'
+2026-03-16 08:46:01  INFO      Seat 18 selected 
+2026-03-16 08:46:01  INFO      https://www.abhibus.com/bus_search/Hyderabad/3/Tirupati/12/20-03-2026/O
+2026-03-16 08:46:01  INFO      
+============================================================
+2026-03-16 08:46:01  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-16 08:46:01  INFO        STATUS   : Status.passed
+2026-03-16 08:46:01  INFO      ============================================================
+

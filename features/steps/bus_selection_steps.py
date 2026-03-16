@@ -60,3 +60,6 @@ def bus_selection(context):
         #logging.info("Flow stopped - due to selected seat already booked or on hold ")
 
         return
+    
+    proceed_to_enter_details = context.bus.proceed_to_enter_details()
+    

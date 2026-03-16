@@ -29,4 +29,14 @@ def validation(context):
         #print(check)
         logging.info(check)
         assert data["from_loc"].lower() in check.lower() , "Website not"
+        check = context.base.get_url()
+
+        assert "passengerinfo".lower() in check.lower() , "passenger info page not loaded"
+        if context.passenger.not_entered == True:
+            assert context.flow_stopped == True, "Passenger Details not entered"
+        else:
+            check = context.base.get_url()
+            assert "payments".lower() in check.lower() , "passenger info page not loaded"
+        
+        
         

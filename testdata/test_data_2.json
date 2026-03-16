@@ -3,15 +3,20 @@
 
     {
         "test_case_id":"Test_002",
-        "scenario" : "Unavailable Seat Selection",
+        "scenario" : "Seat onhold",
         "from_loc" : "HYDERABAD",
         "to_loc" : "TIRUPATI",
         "date_of_journey" : "20/03/2026",
         "bus_ser_no" : "1453",
         "boarding_pt" : "MGBS",
         "dropping_pt" : "TIRUPATI BS",
-        "seat_no" : "18",
-        "error_or_message" : "Seat is unavailable for booking"
+        "seat_no" : "1",
+        "pass_gender" : "female",
+        "pass_name" : "Ttt",
+        "pass_age" : "24",
+        "pass_email" : "Ttt@gmail.com",
+        "pass_mobile" : "9012345678",
+        "error_or_message" : "Seat is currently unavailable for booking"
 
     }
     

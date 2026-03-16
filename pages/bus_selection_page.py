@@ -4,6 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException,NoSuchElementException
+from selenium.webdriver.common.action_chains import ActionChains
 
 from pages.base_page import Base_Page
 from pages.home_page import Home_Page
@@ -24,6 +25,8 @@ class Bus_Page(Home_Page):
     SERVICE_PROVIDER_FULL_NAME_CSS = (By.CSS_SELECTOR,".fullName.text-truncate")
     TOTAL_SERVICES_BY_PROVIDER_CLASS = (By.CSS_SELECTOR,"span[class = 'text-truncate']")
     VIEW_BUSES = (By.XPATH,".//span[text()='View Buses']")
+    PROCEED_BTN_XPATH = (By.XPATH,"//button[contains(text(),'Proceed')]")
+
 
     BUS_SERVICE_ANCESTOR_XPATH = (By.XPATH,"./ancestor::div[contains(@class,'container') and contains(@id,'service-container')]")
     #FARE_INFO_XPATH = (By.XPATH,".//div[contains(@class,'fare-info') and contains(@id,'service-operator-fare-info')]")
@@ -40,6 +43,8 @@ class Bus_Page(Home_Page):
 
     ALL_SEATS_CLASS = (By.CLASS_NAME, "Tooltip-Wrapper")
     BOOKED_SEATS_CSS = (By.XPATH, "//button[@class='seat']")
+    SKIP_LOGIN_XPATH = (By.XPATH,"//a[text()='Skip']")
+
    
     #class="row collapsible-header  "
 
@@ -109,6 +114,8 @@ class Bus_Page(Home_Page):
 
         #bus_group_card = self.driver.find_element(*self.TGSRTC_GROUP_ID)
         bus_group_card_expand = self.bus_group_card.find_element(*self.VIEW_BUSES)
+        self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",bus_group_card_expand)
+
         bus_group_card_expand.click()
 
         #logging.info(f" Service Provider with the name")
@@ -162,6 +169,16 @@ class Bus_Page(Home_Page):
         else:
             return False
 
+    '''def get_seat_status(self, seat):
+        """Check seat status before clicking"""
+        status = self.driver.execute_script("""
+            var span = arguments[0].querySelector('.bd-neutral-400');
+            return span ? span.innerText.trim() : '';
+        """, seat)
+    
+        logging.info(f"Seat status: '{status}'")
+        return status'''
+    
     def seat_search(self,seat_no):
         try:
             all_available_seats = self.wait.until(EC.presence_of_all_elements_located(self.ALL_SEATS_CLASS))
@@ -185,8 +202,11 @@ class Bus_Page(Home_Page):
 
             for seat in all_available_seats:
                 # ── Read span without hovering ──
-                number = self.driver.execute_script("return arguments[0].querySelector('span') ? arguments[0].querySelector('span').innerText : '';",seat)
+                ActionChains(self.driver).move_to_element(seat).perform()
+                time.sleep(0.3)
+                number = self.driver.execute_script("return arguments[0].querySelector('.Tooltip-Tip span:last-child') ? arguments[0].querySelector('.Tooltip-Tip span:last-child').innerText : '';",seat)
 
+                #logging.info(f"Raw: '{number}'")
                 if number.strip() == str(seat_no).strip():
                     # ── Scroll to seat ──
                     self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});", seat)
@@ -204,4 +224,9 @@ class Bus_Page(Home_Page):
             logging.info("Seats not loaded")
             return False
   
-
+    def proceed_to_enter_details(self):
+        proceed_btn_ele = self.wait.until(EC.visibility_of_element_located(self.PROCEED_BTN_XPATH))
+        proceed_btn_ele.click()
+        skip_login_ele = self.wait.until(EC.visibility_of_element_located(self.SKIP_LOGIN_XPATH))
+        skip_login_ele.click()
+        
