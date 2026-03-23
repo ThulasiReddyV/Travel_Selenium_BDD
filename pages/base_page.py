@@ -41,6 +41,11 @@ class Base_Page:
 
         logging.info(f"Formatted Date Accepted: {day}/{month}/{year}")
         return day,month,year
+    
+    def format_date(self, date_str):
+        """Convert 29/03/2026 → Sun, 29 Mar"""
+        date_obj = datetime.strptime(date_str, "%d/%m/%Y")
+        return date_obj.strftime("%a, %d %b")
 
        
     

@@ -33,8 +33,8 @@ class Bus_Page(Home_Page):
     SEATS_INFO_XPATH = (By.XPATH,".//div[contains(@class,'seat-info') and contains(@id,'service-operator-select-seat')]")
     
     #row seat-info bd-success-400 text-success-500 bg-success-50
-    #SELECT_SEATS_BUTTON_XPATH = (By.XPATH,".//button[contains(text() , 'Select Seats')]")
-    SELECT_SEATS_BUTTON_XPATH = (By.XPATH,".//button")
+    SELECT_SEATS_BUTTON_XPATH = (By.XPATH,".//button[contains(text() , 'Select Seats')]")
+    #SELECT_SEATS_BUTTON_XPATH = (By.XPATH,".//button")
     AVAILABLE_SEATS_XPATH = (By.XPATH,".//*[@class = 'svg-icon']")
     
     HIDE_SEATS = (By.XPATH,"//*[button[text()='Hide Seats']]")
@@ -52,6 +52,7 @@ class Bus_Page(Home_Page):
     def total_available_buses(self):
 
         try:
+            
             
             total_buses_count = self.wait.until(EC.visibility_of_element_located(self.TOTAL_SERVICES_IN_ROUTE_CLASS))
             total_buses_count_msg = total_buses_count.text
@@ -111,20 +112,28 @@ class Bus_Page(Home_Page):
             return False
         
     def bus_search(self,service_no):
-
-        #bus_group_card = self.driver.find_element(*self.TGSRTC_GROUP_ID)
-        bus_group_card_expand = self.bus_group_card.find_element(*self.VIEW_BUSES)
-        self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",bus_group_card_expand)
-
-        bus_group_card_expand.click()
-
-        #logging.info(f" Service Provider with the name")
-        BUS_WITH_SERVICE_NO_XPATH = (By.XPATH,f"//h5[contains(text() , '{service_no}')]")
+        
         try:
+            if self.bus_group_card is None:
+                logging.info("bus_group_card is None!")
+                return False
+
+        
+            #bus_group_card = self.driver.find_element(*self.TGSRTC_GROUP_ID)
+            bus_group_card_expand = self.bus_group_card.find_element(*self.VIEW_BUSES)
+            self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",bus_group_card_expand)
+            time.sleep(0.5)
+
+            bus_group_card_expand.click()
+            logging.info("Bus group expanded")
+            #logging.info(f" Service Provider with the name")
+            BUS_WITH_SERVICE_NO_XPATH = (By.XPATH,f"//h5[contains(text() , '{service_no}')]")
+            
             bus_element = self.wait.until(EC.visibility_of_element_located(BUS_WITH_SERVICE_NO_XPATH))
             logging.info(f"{bus_element.text}")
 
             self.driver.execute_script("arguments[0].scrollIntoView({behavior: 'smooth', block: 'center'});",bus_element)
+            time.sleep(0.5)
             
             bus_container = bus_element.find_element(*self.BUS_SERVICE_ANCESTOR_XPATH)
             seats_info_container =  bus_container.find_element(*self.SEATS_INFO_XPATH)
@@ -137,8 +146,12 @@ class Bus_Page(Home_Page):
             select_seats_btn = seats_info_container.find_element(*self.SELECT_SEATS_BUTTON_XPATH)
 
             select_seats_btn.click()
-            return True
-            
+            return True 
+        
+        except NoSuchElementException:
+            logging.info("Element not found")
+            return False
+        
         except TimeoutException:
 
             logging.info(f"NO Service  with the Service number")

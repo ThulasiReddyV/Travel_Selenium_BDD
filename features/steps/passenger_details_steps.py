@@ -15,7 +15,7 @@ from pages. passenger_details_page import Passenger_Page
 from utils.utilities import *
 import logging
 
-@when(u'user enter valid passenger details')
+@when('user enter valid passenger details')
 
 def passenger_details(context):
     data = context.test_data
@@ -33,9 +33,10 @@ def passenger_details(context):
         context.flow_stopped = True
         logging.info("Flow stopped — Due to Passenger Details not entered")
         return
+        
     
-    context.passenger.details()
-    context.passenger.generate_qr()
+    """context.passenger.verify_trip_details()
+    context.passenger.generate_qr()"""
 
 
 

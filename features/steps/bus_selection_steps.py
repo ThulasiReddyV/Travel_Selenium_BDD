@@ -61,5 +61,6 @@ def bus_selection(context):
 
         return
     
-    proceed_to_enter_details = context.bus.proceed_to_enter_details()
+    context.bus.proceed_to_enter_details()
+    context.passenger_url = context.base.get_url()
     

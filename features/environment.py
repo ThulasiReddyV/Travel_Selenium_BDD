@@ -75,6 +75,8 @@ def before_scenario(context, scenario):
     logging.info(f"\n{'='*60}")
     logging.info(f"  STARTING : {scenario.name}")
     logging.info(f"{'='*60}")
+    
+
     #self.driver = driver
     """context.driver = webdriver.Chrome()
     context.driver.get(base_url)

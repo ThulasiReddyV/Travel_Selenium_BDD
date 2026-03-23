@@ -19,6 +19,11 @@ import time
 def load_test(context,test_case_id):
     
     context.test_data = read_and_get_json(test_case_id)
+    test_id       = context.test_data["test_case_id"]   
+    test_scenario = context.test_data["scenario"] 
+    logging.info(f"TEST ID : {test_id}")
+    logging.info(f"CENARIO : {test_scenario}")
+    logging.info(f"{'='*60}")
     
 
 @when('user select the date and routes search buses')
@@ -37,12 +42,12 @@ def entering_journey_details(context):
     #print(f"  Reason       : {reason}")
     if not proceed :
         context.flow_stopped = True
-        logging.info("PASt or max date")
+        logging.info("Past or max date")
     
     else:
-        logging.info(f"search clicked")
+        logging.info(f"Search clicked")
         context.base.click_search()
-        
+        context.buses_url = context.base.get_url()
     
     #raise StepNotImplementedError(u'When enter the from and to')
 

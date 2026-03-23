@@ -15,7 +15,7 @@ from datetime import datetime
 import time
 import logging
 
-class Passenger_Page(Home_Page):
+class Passenger_Page(Bus_Page):
 
     TRIP_DETAILS_XPATH = (By.XPATH,"//*[contains(@class,'trip-details-card-body')]")
     #MOBILE_NUM_INPUTMODE_XPATH = (By.XPATH,"//input[@inputmode='tel']")
@@ -33,9 +33,7 @@ class Passenger_Page(Home_Page):
 
     ERROR_CSS = (By.CSS_SELECTOR,".container.single-error-msg")
 
-    DETAILS_CSS=(By.CSS_SELECTOR,".mt-20.overflow-hidden.rounded-20.bg-common-white.pb-20.shadow-100")
-    EXPAND_XPATH = (By.XPATH,".//*[@class = 'transition-transform']")
-    #data-testid="ExpandMoreIcon"
+    
     
     def trip_details(self):
         trip_info = self.driver.find_element(*self.TRIP_DETAILS_XPATH)
@@ -77,7 +75,7 @@ class Passenger_Page(Home_Page):
         gender_ele = self.wait.until(EC.visibility_of_element_located(GENDER_XPATH))
         gender_ele.click()
         verify_gender_path = f".btn.btn-gender.{gender.lower()}.active.light.filled.primary.sm.rounded-md.inactive.button"
-        logging.info(f"{verify_gender_path}")
+        #logging.info(f"{verify_gender_path}")
         gender_verif = self.driver.find_elements(By.CSS_SELECTOR,verify_gender_path)
         if len(gender_verif) == 1:
             logging.info(f"Gender: {gender_verif[0].text}")
@@ -87,21 +85,13 @@ class Passenger_Page(Home_Page):
         
         continue_btn_ele = self.wait.until(EC.visibility_of_element_located(self.CONTINUE_TO_PAY_BUTTON_XPATH))
         continue_btn_ele.click()
+        self.not_entered = False
 
         error_ele = self.driver.find_elements(*self.ERROR_CSS)
         if (len(error_ele)>0):
             logging.info(f"Passenger Details not entered")
-            self.passenger.not_entered = True
+            self.not_entered = True
             return False
         return True
     
-    def details(self):
-        details_ele = self.wait.until(EC.visibility_of_element_located(self.DETAILS_CSS))
-        expand = details_ele.find_element(*self.EXPAND_XPATH)
-        expand.click()
-        logging.info(f"{details_ele.text} ")
-        
-    def generate_qr(self):
-        
-        generate_qr_ele = self.wait.until(EC.visibility_of_element_located(self.GENERATE_QR_BUTTON_XPATH))
-        generate_qr_ele.click()
+    

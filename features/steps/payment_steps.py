@@ -10,33 +10,65 @@ from selenium.common.exceptions import TimeoutException,NoSuchElementException
 from datetime import datetime
 from pages.base_page import Base_Page
 from pages.home_page import Home_Page
+from pages.bus_selection_page import Bus_Page
+from pages.passenger_details_page import Passenger_Page
+from pages.payment_page import Payment_Page
 from utils.utilities import *
 import logging
+import time
 
 
 @then('Land in the payment page')
-
 def validation(context):
-    """context.base = Base_Page(context.driver)"""
-    #context.base = Home_Page(context.driver)
     data = context.test_data
-    check = context.base.get_url()
-    if context.base.past_date == True :#and context.base.lastmonth_loaded == True  :
-        assert context.flow_stopped == True, "Something went wrong"
-    elif context.base.max_date == True:# and context.base.lastmonth_loaded == True :
-        assert context.flow_stopped == True , "Something went wrong"
-    else:
-        #print(check)
-        logging.info(check)
-        assert data["from_loc"].lower() in check.lower() , "Website not"
-        check = context.base.get_url()
 
-        assert "passengerinfo".lower() in check.lower() , "passenger info page not loaded"
-        if context.passenger.not_entered == True:
-            assert context.flow_stopped == True, "Passenger Details not entered"
-        else:
-            check = context.base.get_url()
-            assert "payments".lower() in check.lower() , "passenger info page not loaded"
+    context.base = Base_Page(context.driver)
+    context.home = Home_Page(context.driver)
+   
+    if context.home.past_date:
+        assert context.flow_stopped, "FAIL: Past date"
+        logging.info("PASS — Past date blocked")
+        return
+
+    elif context.home.max_date:
+        assert context.flow_stopped, "FAIL: Max date"
+        logging.info("PASS — Max date blocked")
+        return
+
+    elif context.flow_stopped:
+        assert context.flow_stopped, "FAIL: flow stopped"
+        logging.info("PASS — flow stopped correctly")
+        return
+
+    
+    
+    assert data["from_loc"].lower() in context.buses_url.lower(), "FAIL: Wrong page loaded"
+    logging.info(f"URL correct ")
+
+    
+
+    assert "passengerinfo" in context.passenger_url.lower(), "FAIL: Passenger info page not loaded"
+    logging.info("Passenger info page loaded")
+
+    context.passenger = Passenger_Page(context.driver)
+    context.payment   = Payment_Page(context.driver)
+
+    if context.flow_stopped:
+        assert context.flow_stopped, "FAIL: Passenger details not entered"
+        logging.info("PASS — Passenger details not entered")
+        return
+
+    time.sleep(3)
+    context.payment_url = context.base.get_url()
+    assert "payments" in context.payment_url.lower(), "FAIL: Payment page not loaded"
+    logging.info("Payment page loaded")
+
+    assert context.payment.verify_trip_details(data), "FAIL: Trip details mismatch!"
+    logging.info("All trip details verified")
+
+    
+    context.payment.generate_qr()
+    logging.info("QR generated")
         
         
         

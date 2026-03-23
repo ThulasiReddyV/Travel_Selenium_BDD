@@ -1,0 +1,53 @@
+2026-03-23 11:15:51  DEBUG     format 'load test data "{test_case_id}"' -> 'load test data "(?P<test_case_id>.+?)"'
+2026-03-23 11:15:51  DEBUG     format 'user select the date and routes search buses' -> 'user select the date and routes search buses'
+2026-03-23 11:15:51  DEBUG     format 'user selects bus and seat for the valid date and route' -> 'user selects bus and seat for the valid date and route'
+2026-03-23 11:15:51  DEBUG     format 'user enter valid passenger details' -> 'user enter valid passenger details'
+2026-03-23 11:15:51  DEBUG     format 'Land in the payment page' -> 'Land in the payment page'
+2026-03-23 11:16:03  INFO      
+============================================================
+2026-03-23 11:16:03  INFO        STARTING : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-23 11:16:03  INFO      ============================================================
+2026-03-23 11:16:03  INFO      TEST ID : Test_002
+2026-03-23 11:16:03  INFO      CENARIO : Seat onhold
+2026-03-23 11:16:03  INFO      ============================================================
+2026-03-23 11:16:03  INFO      Select the date and routes
+2026-03-23 11:16:04  INFO      From Hyderabad
+2026-03-23 11:16:05  INFO      To Tirupati
+2026-03-23 11:16:05  INFO      Formatted Date Accepted: 29/4/2026
+2026-03-23 11:16:10  INFO      Selected Date: 29/04/2026
+2026-03-23 11:16:10  INFO      Given Date: 29/04/2026
+2026-03-23 11:16:10  INFO      Proceed To Buses Page : True
+2026-03-23 11:16:10  INFO      search clicked
+2026-03-23 11:16:28  INFO      Showing 34 Buses on this route
+2026-03-23 11:16:28  INFO      TGSRTC
+2026-03-23 11:16:28  INFO      (Telangana State Road Transport Corporation)
+2026-03-23 11:16:29  INFO      24 Buses,817 Seats Available
+2026-03-23 11:16:29  INFO      Bus group expanded
+2026-03-23 11:16:29  INFO      Service Number - 1453
+2026-03-23 11:16:30  INFO      Select Seats -- 33 Seats Left
+2026-03-23 11:16:30  INFO      Mgbs
+2026-03-23 11:16:30  INFO      Tirupati Bs
+2026-03-23 11:16:31  INFO      Total Available seats: 33
+2026-03-23 11:16:32  INFO      Seat 3 selected 
+2026-03-23 11:16:33  INFO      Trip Details
+Hyderabad
+29 Apr 2026, 17:30
+Mgbs
+10h.30m
+Tirupati
+30 Apr 2026, 04:00
+Tirupati Bs
+2026-03-23 11:16:33  INFO      Mobile Number: 9012345678
+2026-03-23 11:16:33  INFO      Email ID: Ttt@gmail.com
+2026-03-23 11:16:33  INFO      Name: Tttt
+2026-03-23 11:16:34  INFO      Age: 21
+2026-03-23 11:16:34  INFO      Gender: Male
+2026-03-23 11:16:34  INFO      URL correct 
+2026-03-23 11:16:34  INFO      Passenger info page loaded
+2026-03-23 11:16:34  INFO      Screenshot saved: screenshots/Test_002_Seat_onhold_2026-03-23_11-16-34.png
+2026-03-23 11:16:34  INFO      
+============================================================
+2026-03-23 11:16:34  INFO        FINISHED : Validate the bus booking scenario in abhibus website -- @1.1 
+2026-03-23 11:16:34  INFO        STATUS   : Status.failed
+2026-03-23 11:16:34  INFO      ============================================================
+
