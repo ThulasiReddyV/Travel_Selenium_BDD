@@ -1,4 +1,4 @@
-from behave import *
+from behave import given,when,then
 #from selenium.webdriver import 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -15,6 +15,7 @@ import time
 #import functools
 #print = functools.partial(print, flush=True)
 
+#@given('load test data "{test_case_id}"')
 @given('load test data "{test_case_id}"')
 def load_test(context,test_case_id):
     

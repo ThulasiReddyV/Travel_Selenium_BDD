@@ -72,6 +72,6 @@ class Payment_Page(Passenger_Page):
             
     def generate_qr(self):
             
-        time.sleep(5)
         generate_qr_ele = self.wait.until(EC.visibility_of_element_located(self.GENERATE_QR_BUTTON_XPATH))
         generate_qr_ele.click()
+        time.sleep(10)

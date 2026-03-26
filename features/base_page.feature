@@ -8,11 +8,11 @@ Feature: Bus Seat Booking Validation
 
     Examples:
     |   test_case_id    |
-    |   Test_002 |
-    """|   Test_001 |
+    |   Test_000 |
+    |   Test_001 |
     |   Test_002 |
     |   Test_003 |
     |   Test_004 |
     |   Test_005 |
-    |   Test_006 |"""
+    |   Test_006 |
     

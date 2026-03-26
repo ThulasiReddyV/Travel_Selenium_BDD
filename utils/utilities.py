@@ -9,7 +9,7 @@ from datetime import datetime
 TIMESTAMP = datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
 
 def read_and_get_json(test_id):
-    path = os.path.join("testdata","test_data_2.json")
+    path = os.path.join("testdata","test_data.json")
     with open(path) as f:
         data = json.load(f)
     for test_case in data:

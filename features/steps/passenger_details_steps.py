@@ -21,6 +21,9 @@ def passenger_details(context):
     data = context.test_data
     context.passenger = Passenger_Page(context.driver)
 
+    if context.flow_stopped:
+        #logging.info("Flow stopped — skipping bus/seat selection")
+        return
     context.passenger.trip_details()
     context.passenger.enter_mobile_no(data["pass_mobile"])
     context.passenger.enter_email(data["pass_email"])
